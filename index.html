@@ -5,24 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valoa pimeään</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            background: #222031;
+            background: black;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100dvh;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
         }
 
         img {
+            display: block;
             width: 100%;
-            max-width: 600px;
             image-rendering: pixelated;
+        }
+
+        #message {
+            position: absolute;
+            top: 8%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #d8d5e5;
+            font-family: 'Silkscreen', monospace;
+            font-size: clamp(16px, 5vw, 30px);
+            line-height: 1.5;
+            transition: opacity 0.6s ease;
         }
     </style>
 </head>
+
 <body>
-    <img src="merged.gif" alt="Valoa pimeään">
+
+    <div class="container">
+        <img src="merged.gif" alt="Candle">
+
+        <div id="message">
+            Valoa pimeään<br>
+            27.11<br>
+            klo 17 -&gt;
+        </div>
+    </div>
+
+    <script>
+        const message = document.getElementById("message");
+        let changed = false;
+
+        document.body.addEventListener("click", () => {
+            if (changed) return;
+
+            changed = true;
+            message.style.opacity = 0;
+
+            setTimeout(() => {
+                message.textContent = "tuo valosi";
+                message.style.opacity = 1;
+            }, 600);
+        });
+    </script>
+
 </body>
 </html>
+
