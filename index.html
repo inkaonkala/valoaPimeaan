@@ -61,19 +61,31 @@
 
     <script>
         const message = document.getElementById("message");
+        cont origmessage = message.innerHTML;
+        
         let changed = false;
-
+        let animating = false;
+        
         document.body.addEventListener("click", () => {
-            if (changed) return;
-            
-            changed = true;
+            if (animating)
+                return;
+            animating = true;
             message.style.opacity = 0;
 
             setTimeout(() => {
-                message.textContent = "tuo valosi";
+                changed = !changed:
+                if (changed) {
+                    message.textContent = "tuo valosi";
+                }
+                else {
+                    message.ingeritHTML = origmessage;
+                }
                 message.style.opacity = 1;
+                setTimeout(() => {
+                    animating = false;
                 }, 600);
-            });
+            }, 600);
+        });
             
     </script>
 
