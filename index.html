@@ -64,9 +64,12 @@
         let changed = false;
 
         document.body.addEventListener("click", () => {
-            if (changed) return;
-
-            changed = true;
+            //if (changed) return;
+            if (changed)
+                changed false;
+            else
+                changed = true;
+            //changed = true;
             message.style.opacity = 0;
 
             setTimeout(() => {
