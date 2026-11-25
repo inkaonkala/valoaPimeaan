@@ -61,7 +61,7 @@
 
     <script>
         const message = document.getElementById("message");
-        cont origmessage = message.innerHTML;
+        const origmessage = message.innerHTML;
         
         let changed = false;
         let animating = false;
@@ -73,12 +73,12 @@
             message.style.opacity = 0;
 
             setTimeout(() => {
-                changed = !changed:
+                changed = !changed;
                 if (changed) {
                     message.textContent = "tuo valosi";
                 }
                 else {
-                    message.ingeritHTML = origmessage;
+                    message.innerHTML = origmessage;
                 }
                 message.style.opacity = 1;
                 setTimeout(() => {
