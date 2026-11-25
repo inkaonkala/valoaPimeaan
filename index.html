@@ -64,21 +64,17 @@
         let changed = false;
 
         document.body.addEventListener("click", () => {
-            //if (changed) return;
-            if (changed)
-                changed false;
-            else
-            {
-                changed = true;
-            //changed = true;
-                message.style.opacity = 0;
+            if (changed) return;
+            
+            changed = true;
+            message.style.opacity = 0;
 
-                setTimeout(() => {
-                    message.textContent = "tuo valosi";
-                    message.style.opacity = 1;
-                    }, 600);
-                });
-            }
+            setTimeout(() => {
+                message.textContent = "tuo valosi";
+                message.style.opacity = 1;
+                }, 600);
+            });
+            
     </script>
 
 </body>
